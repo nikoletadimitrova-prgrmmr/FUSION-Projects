@@ -1,0 +1,349 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("./fonts/Montserrat-Regular.otf") format("opentype");
+    font-weight: 300 400;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("./fonts/Montserrat-Bold.otf") format("opentype");
+    font-weight: 700;
+
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("./fonts/Montserrat-ExtraBold.otf") format("opentype");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family:"Montserrat" ;
+    src: url("./fonts/Montserrat-Italic.otf") format("opentype");
+    font-style: italic;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+h1 {
+    color: #532972;
+}
+
+.container-title {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.slider-wrapper {
+    width: 50rem;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-container {
+    perspective: 2000px;
+    width: 60rem;
+    max-width: 100%;
+    min-height: 550px;
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.card-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card-front {
+    background-color: #fff;
+}
+
+.card-back {
+    background-color: #fff;
+    transform: rotateY(180deg);
+}
+
+.card-back p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    flex: 1;
+    text-align: justify;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    min-height: 400px;
+}
+
+.card-back .column-flex {
+    height: 100%;
+    align-items: stretch;
+}
+
+.card-back .emblem-wrapper {
+    width: 250px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: stretch;
+}
+
+.card-back .emblem-wrapper svg,
+.card-back .emblem-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-header {
+    box-shadow: 0px 8px 24px rgba(149, 149, 149, 0.2);
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #29A500;
+    background-color: #A9E596;
+    text-shadow: -1px -1px 0 #575656, 1px -1px 0 #575656, -1px 1px 0 #575656, 1px 1px 0 #575656;
+    padding: 10px 0;
+}
+
+/*Harmoniq card*/
+#harmoniqCard .card-header {
+    background-color: #A9E596;
+    color: #29A500;
+}
+
+#harmoniqCard .moto {
+    color: #29A500;
+}
+
+#harmoniqCard .border {
+    border-color: #A9E596;
+}
+
+#harmoniqCard ul li {
+    color: #29A500;
+}
+
+/*Intelekti card*/
+#intelektiCard .card-header {
+    background-color: #fed5ac;
+    color: #FF7F02;
+}
+
+#intelektiCard .moto {
+    color: #FF7F02;
+}
+
+#intelektiCard .border {
+    border-color: #fed5ac;
+}
+
+#intelektiCard ul li {
+    color: #FF7F02;
+}
+
+/*Ideali Card*/
+#idealiCard .card-header {
+    background-color: #B5D7FF;
+    color: #4271A9;
+}
+
+#idealiCard .moto {
+    color: #4271A9;
+}
+
+#idealiCard .border {
+    border-color: #B5D7FF;
+}
+
+#idealiCard ul li {
+    color: #4271A9;
+}
+
+/*Diplomati Card*/
+#diplomatiCard .card-header {
+    background-color: #E0AEEA;
+    color: #91509F;
+}
+
+#diplomatiCard .moto {
+    color: #91509F;
+}
+
+#diplomatiCard .border {
+    border-color: #E0AEEA;
+}
+
+#diplomatiCard ul li {
+    color: #91509F;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.column-flex {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 40px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.moto {
+    font-style: italic;
+    font-size: 0.9em;
+    text-align: center;
+    padding-bottom: 12px;
+    font-weight: bold;
+    color: #29A500;
+}
+
+.border {
+    border-left: 3px solid #A9E596;
+}
+
+ul {
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    list-style: inside;
+}
+
+ul li {
+    overflow: hidden;
+    font-size: 2rem;
+    color: #29A500;
+    font-weight: 600;
+    padding: 20px 0;
+}
+
+.emblem-wrapper {
+    height: auto;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emblem-wrapper-hero {
+    height: auto;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emblem-wrapper img {
+    width: 300px;
+    height: auto;
+}
+
+
+.emblem {
+    width: 100%;
+    height: auto;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #29A500;
+}
+
+.dot:hover {
+    background-color: #888;
+}
+
+@media (max-width: 768px) {
+    .container-title {
+        font-size: 2.5rem;
+    }
+
+    .slider-wrapper,
+    .card-container {
+        width: 100%;
+    }
+
+    .column-flex {
+        flex-direction: column;
+    }
+
+    .emblem-wrapper {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    ul li {
+        font-size: 1.5rem;
+    }
+}
